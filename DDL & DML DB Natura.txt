@@ -1,0 +1,113 @@
+-- DDL
+CREATE DATABASE Natura;
+
+USE master
+GO
+CREATE LOGIN usrnatura WITH PASSWORD=N'123456',
+	DEFAULT_DATABASE=Natura,
+	CHECK_EXPIRATION=OFF,
+	CHECK_POLICY=ON
+GO
+USE Natura;
+GO
+CREATE USER usrnatura FOR LOGIN usrnatura
+GO
+ALTER ROLE db_owner ADD MEMBER usrnatura
+GO
+
+CREATE TABLE Usuarios (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  username VARCHAR(100) NOT NULL,
+  password VARCHAR(128) NOT NULL,
+  rol VARCHAR(20) NOT NULL,
+);
+
+CREATE TABLE Pacientes (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  ci VARCHAR(10) NOT NULL,
+  fechaNacimiento DATE NOT NULL,
+  telefono VARCHAR(15) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+);
+
+CREATE TABLE Citas (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  idPaciente INT NOT NULL,
+  fecha DATE NOT NULL,
+  hora TIME NOT NULL,
+  motivo VARCHAR(255) NOT NULL,
+  estado VARCHAR(25) NOT NULL,
+  CONSTRAINT fk_Citas_Pacientes FOREIGN KEY(idPaciente) REFERENCES Pacientes(id)
+);
+
+CREATE TABLE Dermatologos (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  matricula VARCHAR(10) NOT NULL,
+  especialidad VARCHAR(100) NOT NULL,
+);
+
+CREATE TABLE Pagos (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  idCita INT NOT NULL,
+  fecha DATE NOT NULL,
+  importe DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (id),
+  CONSTRAINT fk_Pagos_Citas FOREIGN KEY(idCita) REFERENCES Citas(id)
+);
+
+CREATE TABLE Reconsultas (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  idCita INT NOT NULL,
+  fecha DATE NOT NULL,
+  motivo VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_Reconsultas_Citas FOREIGN KEY(idCita) REFERENCES Citas(id)
+);
+
+CREATE TABLE HistoriasClinicas (
+  id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+  idPaciente INT NOT NULL,
+  fecha DATE NOT NULL,
+  idDermatologo INT NOT NULL,
+  antecedentes VARCHAR(255) NOT NULL,
+  sintomas VARCHAR(255) NOT NULL,
+  diagnósticos VARCHAR(255) NOT NULL,
+  tratamientos VARCHAR(255) NOT NULL,
+  observaciones VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_HistoriasClinicas_Pacientes FOREIGN KEY(idPaciente) REFERENCES Pacientes(id),
+  CONSTRAINT fk_HistoriasClinicas_Dermatologos FOREIGN KEY(idDermatologo) REFERENCES Dermatologos(id)
+);
+
+ALTER TABLE Usuarios ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Usuarios ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Usuarios ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+ALTER TABLE Pacientes ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Pacientes ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Pacientes ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+ALTER TABLE Citas ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Citas ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Citas ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+ALTER TABLE Dermatologos ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Dermatologos ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Dermatologos ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+ALTER TABLE Pagos ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Pagos ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Pagos ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+
+ALTER TABLE Reconsultas ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Reconsultas ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Reconsultas ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+
+ALTER TABLE HistoriasClinicas ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE HistoriasClinicas ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE HistoriasClinicas ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
