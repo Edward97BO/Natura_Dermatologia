@@ -44,5 +44,10 @@ namespace CpNatura
         {
             abrirFrmHijo(new FrmUsuario());
         }
+
+        private void btnPaciente_Click(object sender, EventArgs e)
+        {
+            abrirFrmHijo(new FrmPaciente());
+        }
     }
 }

@@ -12,32 +12,34 @@ using ClnNatura;
 
 namespace CpNatura
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmPaciente : Form
     {
-        bool esNuevo = false;
-        public FrmUsuario()
+        bool esNuevo = true;
+        public FrmPaciente()
         {
             InitializeComponent();
         }
+
         private void listar()
         {
-            var usuarios = UsuarioCln.listarPa(txtParametro.Text.Trim());
-            dgvLista.DataSource = usuarios;
+            var pacientes = PacienteCln.listarPa(txtParametro.Text.Trim());
+            dgvLista.DataSource = pacientes;
             dgvLista.Columns["id"].Visible = false;
             dgvLista.Columns["estado"].Visible = false;
             dgvLista.Columns["nombre"].HeaderText = "Nombres";
             dgvLista.Columns["apellido"].HeaderText = "Apellidos";
-            dgvLista.Columns["username"].HeaderText = "Usuario";
-            dgvLista.Columns["password"].HeaderText = "Contraseña";
-            dgvLista.Columns["rol"].HeaderText = "Rol";
+            dgvLista.Columns["ci"].HeaderText = "N° de CI";
+            dgvLista.Columns["fechaNacimiento"].HeaderText = "Fecha de Nacimiento";
+            dgvLista.Columns["telefono"].HeaderText = "Teléfono";
+            dgvLista.Columns["email"].HeaderText = "Email";
             dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha y Hora de Registro";
-            btnEditar.Enabled = usuarios.Count > 0;
-            btnEliminar.Enabled = usuarios.Count > 0;
-            if (usuarios.Count > 0) dgvLista.Rows[0].Cells["nombre"].Selected = true;
+            btnEditar.Enabled = pacientes.Count > 0;
+            btnEliminar.Enabled = pacientes.Count > 0;
+            if (pacientes.Count > 0) dgvLista.Rows[0].Cells["nombre"].Selected = true;
         }
 
-        private void FrmUsuario_Load(object sender, EventArgs e)
+        private void FrmPaciente_Load(object sender, EventArgs e)
         {
             pnlDatos.Visible = false;
             listar();
@@ -57,12 +59,13 @@ namespace CpNatura
 
             int index = dgvLista.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-            var usuario = UsuarioCln.get(id);
-            txtNombre.Text = usuario.nombre;
-            txtApellido.Text = usuario.apellido;
-            txtUsuario.Text = usuario.username;
-            txtPassword.Text = usuario.password;
-            cbxRol.Text = usuario.rol;
+            var paciente = PacienteCln.get(id);
+            txtNombre.Text = paciente.nombre;
+            txtApellido.Text = paciente.apellido;
+            txtCi.Text = paciente.ci;
+            dtpFechaNacimiento.Value = paciente.fechaNacimiento;
+            txtTelefono.Text = paciente.telefono;
+            txtEmail.Text= paciente.email;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -85,15 +88,15 @@ namespace CpNatura
         {
             if (e.KeyChar == (char)Keys.Enter) listar();
         }
-        
+
         private bool validar()
         {
             bool esValido = true;
             erpNombre.SetError(txtNombre, "");
             erpApellido.SetError(txtApellido, "");
-            erpUsuario.SetError(txtUsuario, "");
-            erpPassword.SetError(txtPassword, "");
-            erpRol.SetError(cbxRol, "");
+            erpCi.SetError(txtCi, "");
+            erpTelefono.SetError(txtTelefono, "");
+            erpEmail.SetError(txtEmail, "");
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 esValido = false;
@@ -104,20 +107,20 @@ namespace CpNatura
                 esValido = false;
                 erpApellido.SetError(txtApellido, "El campo Apellidos es obligatorio");
             }
-            if (string.IsNullOrEmpty(txtUsuario.Text))
+            if (string.IsNullOrEmpty(txtCi.Text))
             {
                 esValido = false;
-                erpUsuario.SetError(txtUsuario, "El campo Usuario es obligatorio");
+                erpCi.SetError(txtCi, "El campo CI es obligatorio");
             }
-            if (string.IsNullOrEmpty(txtUsuario.Text))
+            if (string.IsNullOrEmpty(txtTelefono.Text))
             {
                 esValido = false;
-                erpPassword.SetError(txtPassword, "El campo Contraseña es obligatorio");
+                erpTelefono.SetError(txtTelefono, "El campo Teléfono es obligatorio");
             }
-            if (string.IsNullOrEmpty(cbxRol.Text))
+            if (string.IsNullOrEmpty(txtEmail.Text))
             {
                 esValido = false;
-                erpRol.SetError(cbxRol, "El campo Rol es obligatorio");
+                erpEmail.SetError(txtEmail, "El campo Email es obligatorio");
             }
             return esValido;
         }
@@ -126,39 +129,40 @@ namespace CpNatura
         {
             if (validar())
             {
-                var usuario = new Usuario();
-                usuario.nombre = txtNombre.Text.Trim();
-                usuario.apellido = txtApellido.Text.Trim();
-                usuario.username = txtUsuario.Text.Trim();
-                usuario.password = txtPassword.Text.Trim();
-                usuario.rol = cbxRol.Text.Trim();
-                usuario.usuarioRegistro = "Edward";
+                var paciente = new Paciente();
+                paciente.nombre = txtNombre.Text.Trim();
+                paciente.apellido = txtApellido.Text.Trim();
+                paciente.ci =   txtCi.Text.Trim();
+                paciente.fechaNacimiento = dtpFechaNacimiento.Value;
+                paciente.telefono = txtTelefono.Text.Trim();
+                paciente.email = txtEmail.Text.Trim();
+                paciente.usuarioRegistro = "Edward";
                 if (esNuevo)
                 {
-                    usuario.fechaRegistro = DateTime.Now;
-                    usuario.estado = 1;
-                    UsuarioCln.insertar(usuario);
+                    paciente.fechaRegistro = DateTime.Now;
+                    paciente.estado = 1;
+                    PacienteCln.insertar(paciente);
                 }
                 else
                 {
                     int index = dgvLista.CurrentCell.RowIndex;
-                    usuario.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-                    UsuarioCln.actualizar(usuario);
+                    paciente.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
+                    PacienteCln.actualizar(paciente);
                 }
                 listar();
                 btnCancelar.PerformClick();
-                MessageBox.Show("Usuario guardado correctamente", "::: Natura - Mensaje:::",
+                MessageBox.Show("Paciente registrado correctamente", "::: Natura - Mensaje:::",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void limpiar()
         {
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
-            txtUsuario.Text = string.Empty;
-            txtPassword.Text = string.Empty;
-            cbxRol.Text = string.Empty;
+            txtCi.Text = string.Empty;
+            dtpFechaNacimiento.Value = DateTime.Now;
+            txtTelefono.Text = string.Empty;
+            txtEmail.Text = string.Empty;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -167,13 +171,13 @@ namespace CpNatura
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
 
             string nombre = dgvLista.Rows[index].Cells["nombre"].Value.ToString();
-            DialogResult dialog = MessageBox.Show($"¿Está seguro que desea eliminar el Usuario {nombre}?",
+            DialogResult dialog = MessageBox.Show($"¿Está seguro que desea eliminar el Paciente {nombre}?",
                 "::: Natura - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialog == DialogResult.OK)
             {
-                UsuarioCln.eliminar(id, "Edward");
+                PacienteCln.eliminar(id, "Edward");
                 listar();
-                MessageBox.Show("Usuario eliminado correctamente", "::: Natura - Mensaje:::",
+                MessageBox.Show("Paciente eliminado correctamente", "::: Natura - Mensaje:::",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

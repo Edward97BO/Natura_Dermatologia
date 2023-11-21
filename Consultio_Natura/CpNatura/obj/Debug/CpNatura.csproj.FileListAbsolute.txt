@@ -21,3 +21,4 @@ D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura
 D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.pdb
 D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmPrincipal.resources
 D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmUsuario.resources
+D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmPaciente.resources
