@@ -12,16 +12,24 @@ namespace CadNatura
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuarios
+    public partial class Dermatologo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Dermatologo()
+        {
+            this.HistoriaClinica = new HashSet<HistoriaClinica>();
+        }
+    
         public int id { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string rol { get; set; }
+        public string matricula { get; set; }
+        public string especialidad { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistoriaClinica> HistoriaClinica { get; set; }
     }
 }

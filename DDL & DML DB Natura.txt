@@ -15,7 +15,7 @@ GO
 ALTER ROLE db_owner ADD MEMBER usrnatura
 GO
 
-CREATE TABLE Usuarios (
+CREATE TABLE Usuario (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE Usuarios (
   rol VARCHAR(20) NOT NULL,
 );
 
-CREATE TABLE Pacientes (
+CREATE TABLE Paciente (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
@@ -34,16 +34,16 @@ CREATE TABLE Pacientes (
   email VARCHAR(100) NOT NULL,
 );
 
-CREATE TABLE Citas (
+CREATE TABLE Cita (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   idPaciente INT NOT NULL,
   fecha DATE NOT NULL,
   hora TIME NOT NULL,
   motivo VARCHAR(255) NOT NULL,
-  CONSTRAINT fk_Citas_Pacientes FOREIGN KEY(idPaciente) REFERENCES Pacientes(id)
+  CONSTRAINT fk_Cita_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(id)
 );
 
-CREATE TABLE Dermatologos (
+CREATE TABLE Dermatologo (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
@@ -51,24 +51,24 @@ CREATE TABLE Dermatologos (
   especialidad VARCHAR(100) NOT NULL,
 );
 
-CREATE TABLE Pagos (
+CREATE TABLE Pago (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   idCita INT NOT NULL,
   importe DECIMAL(10,2) NOT NULL,
   estado VARCHAR (25) NOT NULL,
-  CONSTRAINT fk_Pagos_Citas FOREIGN KEY(idCita) REFERENCES Citas(id)
+  CONSTRAINT fk_Pago_Cita FOREIGN KEY(idCita) REFERENCES Cita(id)
 );
 
-CREATE TABLE Reconsultas (
+CREATE TABLE Reconsulta (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   idCita INT NOT NULL,
   fecha DATE NOT NULL,
   hora TIME NOT NULL,
   motivo VARCHAR(255) NOT NULL,
-  CONSTRAINT fk_Reconsultas_Citas FOREIGN KEY(idCita) REFERENCES Citas(id)
+  CONSTRAINT fk_Reconsulta_Cita FOREIGN KEY(idCita) REFERENCES Cita(id)
 );
 
-CREATE TABLE HistoriasClinicas (
+CREATE TABLE HistoriaClinica (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   idPaciente INT NOT NULL,
   idDermatologo INT NOT NULL,
@@ -77,82 +77,82 @@ CREATE TABLE HistoriasClinicas (
   diagnosticos VARCHAR(255) NOT NULL,
   tratamientos VARCHAR(255) NOT NULL,
   observaciones VARCHAR(255) NOT NULL,
-  CONSTRAINT fk_HistoriasClinicas_Pacientes FOREIGN KEY(idPaciente) REFERENCES Pacientes(id),
-  CONSTRAINT fk_HistoriasClinicas_Dermatologos FOREIGN KEY(idDermatologo) REFERENCES Dermatologos(id)
+  CONSTRAINT fk_HistoriaClinica_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(id),
+  CONSTRAINT fk_HistoriaClinica_Dermatologo FOREIGN KEY(idDermatologo) REFERENCES Dermatologo(id)
 );
 
-ALTER TABLE Usuarios ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE Usuarios ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
-ALTER TABLE Usuarios ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+ALTER TABLE Usuario ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Usuario ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Usuario ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
-ALTER TABLE Pacientes ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE Pacientes ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
-ALTER TABLE Pacientes ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+ALTER TABLE Paciente ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Paciente ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Paciente ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
-ALTER TABLE Citas ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE Citas ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
-ALTER TABLE Citas ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+ALTER TABLE Cita ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Cita ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Cita ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
-ALTER TABLE Dermatologos ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE Dermatologos ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
-ALTER TABLE Dermatologos ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+ALTER TABLE Dermatologo ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Dermatologo ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Dermatologo ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
-ALTER TABLE Pagos ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE Pagos ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Pago ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Pago ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
 
-ALTER TABLE Reconsultas ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE Reconsultas ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
-ALTER TABLE Reconsultas ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+ALTER TABLE Reconsulta ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE Reconsulta ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Reconsulta ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
-ALTER TABLE HistoriasClinicas ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
-ALTER TABLE HistoriasClinicas ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
-ALTER TABLE HistoriasClinicas ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
+ALTER TABLE HistoriaClinica ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
+ALTER TABLE HistoriaClinica ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE HistoriaClinica ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
 
-CREATE PROC paUsuariosListar @parametro VARCHAR(50)
+CREATE PROC paUsuarioListar @parametro VARCHAR(50)
 AS
   SELECT id,nombre, apellido,username,password,rol,usuarioRegistro,fechaRegistro,estado 
-  FROM Usuarios
+  FROM Usuario
   WHERE estado<>-1 AND nombre LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
-CREATE PROC paPacientesListar @parametro VARCHAR(50)
+CREATE PROC paPacienteListar @parametro VARCHAR(50)
 AS
   SELECT id,nombre, apellido,ci,fechaNacimiento,telefono, email, usuarioRegistro,fechaRegistro,estado 
-  FROM Pacientes
+  FROM Paciente
   WHERE estado<>-1 AND nombre LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
-CREATE PROC paCitasListar @parametro VARCHAR(50)
+CREATE PROC paCitaListar @parametro VARCHAR(50)
 AS
   SELECT id,idPaciente, fecha,hora ,motivo, usuarioRegistro,fechaRegistro,estado 
-  FROM Citas
+  FROM Cita
   WHERE estado<>-1 AND motivo LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
-CREATE PROC paDermatologosListar @parametro VARCHAR(50)
+CREATE PROC paDermatologoListar @parametro VARCHAR(50)
 AS
   SELECT id,nombre, apellido, matricula , especialidad, usuarioRegistro,fechaRegistro,estado 
-  FROM Dermatologos
+  FROM Dermatologo
   WHERE estado<>-1 AND nombre LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
-CREATE PROC paPagosListar @parametro VARCHAR(50)
+CREATE PROC paPagoListar @parametro VARCHAR(50)
 AS
   SELECT id,idCita, estado, importe, usuarioRegistro,fechaRegistro
-  FROM Pagos
+  FROM Pago
   WHERE estado<>-1 AND idCita LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
-CREATE PROC paReconsultasListar @parametro VARCHAR(50)
+CREATE PROC paReconsultaListar @parametro VARCHAR(50)
 AS
   SELECT id,idCita, fecha, hora, motivo, usuarioRegistro,fechaRegistro,estado 
-  FROM Reconsultas
+  FROM Reconsulta
   WHERE estado<>-1 AND motivo LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
-CREATE PROC paHistoriasClinicasListar @parametro VARCHAR(50)
+CREATE PROC paHistoriaClinicaListar @parametro VARCHAR(50)
 AS
   SELECT id,idPaciente, idDermatologo, antecedentes, sintomas, diagnosticos, tratamientos, observaciones, usuarioRegistro,fechaRegistro,estado 
   FROM HistoriasClinicas
   WHERE estado<>-1 AND idPaciente LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
 -- DML
-INSERT INTO Usuarios (nombre, apellido, username, password, rol)
+INSERT INTO Usuario (nombre, apellido, username, password, rol)
 VALUES
 ('Juan', 'Perez', 'juanperez', '123456789', 'Administrador'),
 ('Ana', 'López', 'analópez', '987654321', 'Secretario'),
@@ -160,40 +160,40 @@ VALUES
 
 
 -- Insertar valores en la tabla Pacientes
-INSERT INTO Pacientes (nombre, apellido, ci, fechaNacimiento, telefono, email)
+INSERT INTO Paciente (nombre, apellido, ci, fechaNacimiento, telefono, email)
 VALUES
   ('Juan', 'Perez', '1234567890', '1990-01-15', '123456789', 'juan.perez@email.com'),
   ('Maria', 'Gomez', '0987654321', '1985-05-20', '987654321', 'maria.gomez@email.com'),
   ('Carlos', 'Lopez', '4567890123', '2000-11-08', '111222333', 'carlos.lopez@email.com');
 
 
-INSERT INTO Citas (idPaciente, fecha, hora, motivo)
+INSERT INTO Cita (idPaciente, fecha, hora, motivo)
 VALUES
 (1, '2023-11-25', '10:00', 'Erupción cutánea'),
 (2, '2023-11-28', '11:30', 'Acné'),
 (3, '2023-12-01', '14:00', 'Revisión general');
 
 
-INSERT INTO Dermatologos (nombre, apellido, matricula, especialidad)
+INSERT INTO Dermatologo (nombre, apellido, matricula, especialidad)
 VALUES
 ('Pedro', 'Rodriguez', '123456', 'Dermatología general'),
 ('Ana', 'Sánchez', '987654', 'Dermatología pediátrica'),
 ('Juan', 'García', '456789', 'Dermatología estética');
 
-INSERT INTO Pagos (idCita, importe, estado)
+INSERT INTO Pago (idCita, importe, estado)
 VALUES
 (1, 100.00, 'Pagado'),
 (2, 150.00, 'Pendiente'),
 (3, 200.00, 'Pagado');
 
-INSERT INTO Reconsultas (idCita, fecha, hora, motivo)
+INSERT INTO Reconsulta (idCita, fecha, hora, motivo)
 VALUES
 (1, '2023-12-02', '10:00', 'Control de evolución de erupción cutánea'),
 (2, '2023-12-05', '11:30', 'Seguimiento de acné'),
 (3, '2023-12-08', '14:00', 'Revisión dermatológica general');
 
 -- Insertar valores en la tabla HistoriasClinicas
-INSERT INTO HistoriasClinicas (idPaciente, idDermatologo, antecedentes, sintomas, diagnosticos, tratamientos, observaciones)
+INSERT INTO HistoriaClinica (idPaciente, idDermatologo, antecedentes, sintomas, diagnosticos, tratamientos, observaciones)
 VALUES
   (1, 1, 'Historial de alergias', 'Picazón en la piel', 'Dermatitis', 'Crema antiinflamatoria', 'Ninguna observación'),
   (2, 2, 'Sin antecedentes relevantes', 'Enrojecimiento y ardor', 'Eczema', 'Hidratación y corticoides', 'Seguimiento programado'),

@@ -10,17 +10,16 @@
 namespace CadNatura
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class paHistoriasClinicasListar_Result
+    public partial class Usuario
     {
         public int id { get; set; }
-        public int idPaciente { get; set; }
-        public int idDermatologo { get; set; }
-        public string antecedentes { get; set; }
-        public string sintomas { get; set; }
-        public string diagnosticos { get; set; }
-        public string tratamientos { get; set; }
-        public string observaciones { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string rol { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

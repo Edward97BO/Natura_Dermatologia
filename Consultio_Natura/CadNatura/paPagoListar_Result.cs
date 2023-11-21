@@ -10,17 +10,14 @@
 namespace CadNatura
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Pagos
+    public partial class paPagoListar_Result
     {
         public int id { get; set; }
         public int idCita { get; set; }
-        public decimal importe { get; set; }
         public string estado { get; set; }
+        public decimal importe { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
-    
-        public virtual Citas Citas { get; set; }
     }
 }

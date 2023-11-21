@@ -12,17 +12,15 @@ namespace CadNatura
     using System;
     using System.Collections.Generic;
     
-    public partial class Reconsultas
+    public partial class Pago
     {
         public int id { get; set; }
         public int idCita { get; set; }
-        public System.DateTime fecha { get; set; }
-        public System.TimeSpan hora { get; set; }
-        public string motivo { get; set; }
+        public decimal importe { get; set; }
+        public string estado { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
-        public short estado { get; set; }
     
-        public virtual Citas Citas { get; set; }
+        public virtual Cita Cita { get; set; }
     }
 }

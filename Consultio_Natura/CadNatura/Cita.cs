@@ -10,16 +10,30 @@
 namespace CadNatura
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class paReconsultasListar_Result
+    public partial class Cita
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Cita()
+        {
+            this.Pago = new HashSet<Pago>();
+            this.Reconsulta = new HashSet<Reconsulta>();
+        }
+    
         public int id { get; set; }
-        public int idCita { get; set; }
+        public int idPaciente { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
         public string motivo { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
+    
+        public virtual Paciente Paciente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pago> Pago { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reconsulta> Reconsulta { get; set; }
     }
 }

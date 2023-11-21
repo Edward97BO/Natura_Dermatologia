@@ -11,15 +11,13 @@ namespace CadNatura
 {
     using System;
     
-    public partial class paPacientesListar_Result
+    public partial class paCitaListar_Result
     {
         public int id { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string ci { get; set; }
-        public System.DateTime fechaNacimiento { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
+        public int idPaciente { get; set; }
+        public System.DateTime fecha { get; set; }
+        public System.TimeSpan hora { get; set; }
+        public string motivo { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

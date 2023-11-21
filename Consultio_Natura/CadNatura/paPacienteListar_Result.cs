@@ -10,17 +10,9 @@
 namespace CadNatura
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Pacientes
+    public partial class paPacienteListar_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pacientes()
-        {
-            this.Citas = new HashSet<Citas>();
-            this.HistoriasClinicas = new HashSet<HistoriasClinicas>();
-        }
-    
         public int id { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
@@ -31,10 +23,5 @@ namespace CadNatura
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Citas> Citas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HistoriasClinicas> HistoriasClinicas { get; set; }
     }
 }

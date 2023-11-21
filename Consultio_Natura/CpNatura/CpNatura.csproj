@@ -81,6 +81,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadNatura\CadNatura.csproj">
+      <Project>{26df2080-1c65-4888-b7b0-d461e820049a}</Project>
+      <Name>CadNatura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClnNatura\ClnNatura.csproj">
+      <Project>{819cb087-c2a6-456c-8636-793c27a03f70}</Project>
+      <Name>ClnNatura</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

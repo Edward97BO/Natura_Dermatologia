@@ -11,13 +11,16 @@ namespace CadNatura
 {
     using System;
     
-    public partial class paPagosListar_Result
+    public partial class paUsuarioListar_Result
     {
         public int id { get; set; }
-        public int idCita { get; set; }
-        public string estado { get; set; }
-        public decimal importe { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string rol { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
+        public short estado { get; set; }
     }
 }

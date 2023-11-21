@@ -11,14 +11,13 @@ namespace CadNatura
 {
     using System;
     
-    public partial class paUsuariosListar_Result
+    public partial class paDermatologoListar_Result
     {
         public int id { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string rol { get; set; }
+        public string matricula { get; set; }
+        public string especialidad { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

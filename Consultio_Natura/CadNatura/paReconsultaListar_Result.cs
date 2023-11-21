@@ -11,10 +11,10 @@ namespace CadNatura
 {
     using System;
     
-    public partial class paCitasListar_Result
+    public partial class paReconsultaListar_Result
     {
         public int id { get; set; }
-        public int idPaciente { get; set; }
+        public int idCita { get; set; }
         public System.DateTime fecha { get; set; }
         public System.TimeSpan hora { get; set; }
         public string motivo { get; set; }
