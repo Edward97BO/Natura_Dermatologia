@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClnNatura
 {
-    internal class UsuarioCln
+    public class UsuarioCln
     {
         public static int insertar(Usuario usuario)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder.Hierarchy;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,23 @@ namespace CpNatura
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void abrirFrmHijo(object frmHijo)
+        {
+            if (this.pnlContenedor.Controls.Count > 0)
+                this.pnlContenedor.Controls.RemoveAt(0);
+            Form fh = frmHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.pnlContenedor.Controls.Add(fh);
+            this.pnlContenedor.Tag = fh;
+            fh.Show();
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            abrirFrmHijo(new FrmUsuario());
         }
     }
 }

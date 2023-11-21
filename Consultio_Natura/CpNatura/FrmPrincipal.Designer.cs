@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblNatura = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.btnHistoriaClinica = new System.Windows.Forms.Button();
             this.btnReconsulta = new System.Windows.Forms.Button();
             this.btnPago = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.lblNatura = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,30 +93,40 @@
             this.pnlMenu.Size = new System.Drawing.Size(220, 615);
             this.pnlMenu.TabIndex = 1;
             // 
-            // panel1
+            // lblNatura
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel1.Location = new System.Drawing.Point(12, 255);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 32);
-            this.panel1.TabIndex = 2;
+            this.lblNatura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNatura.ForeColor = System.Drawing.Color.White;
+            this.lblNatura.Location = new System.Drawing.Point(23, 203);
+            this.lblNatura.Name = "lblNatura";
+            this.lblNatura.Size = new System.Drawing.Size(168, 23);
+            this.lblNatura.TabIndex = 15;
+            this.lblNatura.Text = "NATURA";
+            this.lblNatura.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnlContenedor
+            // panel7
             // 
-            this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(194)))), ((int)(((byte)(173)))));
-            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedor.Location = new System.Drawing.Point(220, 35);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(1080, 615);
-            this.pnlContenedor.TabIndex = 2;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel7.Location = new System.Drawing.Point(12, 445);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 32);
+            this.panel7.TabIndex = 14;
             // 
-            // panel2
+            // panel6
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel2.Location = new System.Drawing.Point(12, 293);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 32);
-            this.panel2.TabIndex = 4;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel6.Location = new System.Drawing.Point(12, 483);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 32);
+            this.panel6.TabIndex = 12;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel5.Location = new System.Drawing.Point(12, 407);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 32);
+            this.panel5.TabIndex = 10;
             // 
             // panel3
             // 
@@ -134,29 +144,30 @@
             this.panel4.Size = new System.Drawing.Size(10, 32);
             this.panel4.TabIndex = 6;
             // 
-            // panel5
+            // panel2
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel5.Location = new System.Drawing.Point(12, 407);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 32);
-            this.panel5.TabIndex = 10;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel2.Location = new System.Drawing.Point(12, 293);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 32);
+            this.panel2.TabIndex = 4;
             // 
-            // panel6
+            // panel1
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel6.Location = new System.Drawing.Point(12, 483);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 32);
-            this.panel6.TabIndex = 12;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel1.Location = new System.Drawing.Point(12, 255);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 32);
+            this.panel1.TabIndex = 2;
             // 
-            // panel7
+            // pnlContenedor
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel7.Location = new System.Drawing.Point(12, 445);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 32);
-            this.panel7.TabIndex = 14;
+            this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(156)))), ((int)(((byte)(137)))));
+            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedor.Location = new System.Drawing.Point(220, 35);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(1080, 615);
+            this.pnlContenedor.TabIndex = 2;
             // 
             // btnHistoriaClinica
             // 
@@ -276,6 +287,7 @@
             this.btnUsuario.Text = "USUARIOS";
             this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // pictureBox1
             // 
@@ -310,17 +322,6 @@
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // lblNatura
-            // 
-            this.lblNatura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNatura.ForeColor = System.Drawing.Color.White;
-            this.lblNatura.Location = new System.Drawing.Point(23, 203);
-            this.lblNatura.Name = "lblNatura";
-            this.lblNatura.Size = new System.Drawing.Size(168, 23);
-            this.lblNatura.TabIndex = 15;
-            this.lblNatura.Text = "NATURA";
-            this.lblNatura.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmPrincipal
             // 
