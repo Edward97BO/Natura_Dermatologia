@@ -148,7 +148,7 @@ AS
 CREATE PROC paHistoriaClinicaListar @parametro VARCHAR(50)
 AS
   SELECT id,idPaciente, idDermatologo, antecedentes, sintomas, diagnosticos, tratamientos, observaciones, usuarioRegistro,fechaRegistro,estado 
-  FROM HistoriasClinicas
+  FROM HistoriaClinica
   WHERE estado<>-1 AND idPaciente LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
 -- DML

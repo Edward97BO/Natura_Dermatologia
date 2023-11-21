@@ -414,7 +414,7 @@
           <FunctionImport Name="paDermatologoListar" ReturnType="Collection(NaturaModel.paDermatologoListar_Result)">
             <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="paHistoriaClinicaListar">
+          <FunctionImport Name="paHistoriaClinicaListar" ReturnType="Collection(NaturaModel.paHistoriaClinicaListar_Result)">
             <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paPacienteListar" ReturnType="Collection(NaturaModel.paPacienteListar_Result)">
@@ -446,6 +446,19 @@
           <Property Type="String" Name="apellido" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="matricula" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="especialidad" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
+          <Property Type="Int16" Name="estado" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="paHistoriaClinicaListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="idPaciente" Nullable="false" />
+          <Property Type="Int32" Name="idDermatologo" Nullable="false" />
+          <Property Type="String" Name="antecedentes" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="sintomas" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="diagnosticos" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="tratamientos" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="observaciones" Nullable="false" MaxLength="255" />
           <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
           <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
           <Property Type="Int16" Name="estado" Nullable="false" />
@@ -627,7 +640,23 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="paHistoriaClinicaListar" FunctionName="NaturaModel.Store.paHistoriaClinicaListar" />
+          <FunctionImportMapping FunctionImportName="paHistoriaClinicaListar" FunctionName="NaturaModel.Store.paHistoriaClinicaListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NaturaModel.paHistoriaClinicaListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idDermatologo" ColumnName="idDermatologo" />
+                <ScalarProperty Name="antecedentes" ColumnName="antecedentes" />
+                <ScalarProperty Name="sintomas" ColumnName="sintomas" />
+                <ScalarProperty Name="diagnosticos" ColumnName="diagnosticos" />
+                <ScalarProperty Name="tratamientos" ColumnName="tratamientos" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="paPacienteListar" FunctionName="NaturaModel.Store.paPacienteListar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="NaturaModel.paPacienteListar_Result">

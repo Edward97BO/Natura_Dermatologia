@@ -53,13 +53,13 @@ namespace CadNatura
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paDermatologoListar_Result>("paDermatologoListar", parametroParameter);
         }
     
-        public virtual int paHistoriaClinicaListar(string parametro)
+        public virtual ObjectResult<paHistoriaClinicaListar_Result> paHistoriaClinicaListar(string parametro)
         {
             var parametroParameter = parametro != null ?
                 new ObjectParameter("parametro", parametro) :
                 new ObjectParameter("parametro", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("paHistoriaClinicaListar", parametroParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paHistoriaClinicaListar_Result>("paHistoriaClinicaListar", parametroParameter);
         }
     
         public virtual ObjectResult<paPacienteListar_Result> paPacienteListar(string parametro)

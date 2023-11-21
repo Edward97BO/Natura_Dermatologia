@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a31707d614254a37b62136fcafd19585" Name="Diagram1">
+      <Diagram DiagramId="bb54882a09634fae81389b11a6ba21c8" Name="Diagram1">
         <EntityTypeShape EntityType="NaturaModel.Cita" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="NaturaModel.Dermatologo" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="NaturaModel.HistoriaClinica" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />

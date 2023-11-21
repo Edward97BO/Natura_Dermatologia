@@ -90,6 +90,9 @@
     <Compile Include="Pago.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="paHistoriaClinicaListar_Result.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="paPacienteListar_Result.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
