@@ -64,5 +64,10 @@ namespace CpNatura
         {
             abrirFrmHijo(new FrmPago());
         }
+
+        private void btnReconsulta_Click(object sender, EventArgs e)
+        {
+            abrirFrmHijo(new FrmReconsulta());
+        }
     }
 }

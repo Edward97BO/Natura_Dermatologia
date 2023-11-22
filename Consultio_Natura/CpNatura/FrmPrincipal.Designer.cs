@@ -177,6 +177,7 @@
             this.btnReconsulta.Text = "RECONSULTAS";
             this.btnReconsulta.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnReconsulta.UseVisualStyleBackColor = true;
+            this.btnReconsulta.Click += new System.EventHandler(this.btnReconsulta_Click);
             // 
             // panel5
             // 
