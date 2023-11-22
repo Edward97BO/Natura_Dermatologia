@@ -54,5 +54,10 @@ namespace CpNatura
         {
             abrirFrmHijo(new FrmCita());
         }
+
+        private void btnDermatologo_Click(object sender, EventArgs e)
+        {
+            abrirFrmHijo(new FrmMedico());
+        }
     }
 }

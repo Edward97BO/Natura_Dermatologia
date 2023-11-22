@@ -227,6 +227,7 @@
             this.btnDermatologo.Text = "MÉDICOS";
             this.btnDermatologo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDermatologo.UseVisualStyleBackColor = true;
+            this.btnDermatologo.Click += new System.EventHandler(this.btnDermatologo_Click);
             // 
             // panel4
             // 

@@ -14,7 +14,7 @@ namespace CpNatura
 {
     public partial class FrmCita : Form
     {
-        bool esNuevo = true;
+        bool esNuevo = false;
         public FrmCita()
         {
             InitializeComponent();

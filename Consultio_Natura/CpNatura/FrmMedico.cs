@@ -12,34 +12,32 @@ using ClnNatura;
 
 namespace CpNatura
 {
-    public partial class FrmPaciente : Form
+    public partial class FrmMedico : Form
     {
         bool esNuevo = false;
-        public FrmPaciente()
+
+        public FrmMedico()
         {
             InitializeComponent();
         }
-
         private void listar()
         {
-            var pacientes = PacienteCln.listarPa(txtParametro.Text.Trim());
-            dgvLista.DataSource = pacientes;
+            var dermatologos = DermatologoCln.listarPa(txtParametro.Text.Trim());
+            dgvLista.DataSource = dermatologos;
             dgvLista.Columns["id"].Visible = false;
             dgvLista.Columns["estado"].Visible = false;
             dgvLista.Columns["nombre"].HeaderText = "Nombres";
             dgvLista.Columns["apellido"].HeaderText = "Apellidos";
-            dgvLista.Columns["ci"].HeaderText = "N° de CI";
-            dgvLista.Columns["fechaNacimiento"].HeaderText = "Fecha de Nacimiento";
-            dgvLista.Columns["telefono"].HeaderText = "Teléfono";
-            dgvLista.Columns["email"].HeaderText = "Email";
+            dgvLista.Columns["matricula"].HeaderText = "Matrícula";
+            dgvLista.Columns["especialidad"].HeaderText = "Especialidad";
             dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario";
-            dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha y Hora de Registro";
-            btnEditar.Enabled = pacientes.Count > 0;
-            btnEliminar.Enabled = pacientes.Count > 0;
-            if (pacientes.Count > 0) dgvLista.Rows[0].Cells["nombre"].Selected = true;
+            dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
+            btnEditar.Enabled = dermatologos.Count > 0;
+            btnEliminar.Enabled = dermatologos.Count > 0;
+            if (dermatologos.Count > 0) dgvLista.Rows[0].Cells["nombre"].Selected = true;
         }
 
-        private void FrmPaciente_Load(object sender, EventArgs e)
+        private void FrmMedico_Load(object sender, EventArgs e)
         {
             pnlDatos.Visible = false;
             listar();
@@ -59,13 +57,11 @@ namespace CpNatura
 
             int index = dgvLista.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-            var paciente = PacienteCln.get(id);
-            txtNombre.Text = paciente.nombre;
-            txtApellido.Text = paciente.apellido;
-            txtCi.Text = paciente.ci;
-            dtpFechaNacimiento.Value = paciente.fechaNacimiento;
-            txtTelefono.Text = paciente.telefono;
-            txtEmail.Text= paciente.email;
+            var dermatologo = DermatologoCln.get(id);
+            txtNombre.Text = dermatologo.nombre;
+            txtApellido.Text = dermatologo.apellido;
+            txtMatricula.Text = dermatologo.matricula;
+            txtEspecialidad.Text = dermatologo.especialidad;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -94,9 +90,8 @@ namespace CpNatura
             bool esValido = true;
             erpNombre.SetError(txtNombre, "");
             erpApellido.SetError(txtApellido, "");
-            erpCi.SetError(txtCi, "");
-            erpTelefono.SetError(txtTelefono, "");
-            erpEmail.SetError(txtEmail, "");
+            erpMatricula.SetError(txtMatricula, "");
+            erpEspecialidad.SetError(txtEspecialidad, "");
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 esValido = false;
@@ -107,20 +102,15 @@ namespace CpNatura
                 esValido = false;
                 erpApellido.SetError(txtApellido, "El campo Apellidos es obligatorio");
             }
-            if (string.IsNullOrEmpty(txtCi.Text))
+            if (string.IsNullOrEmpty(txtMatricula.Text))
             {
                 esValido = false;
-                erpCi.SetError(txtCi, "El campo CI es obligatorio");
+                erpMatricula.SetError(txtMatricula, "El campo Matrícula es obligatorio");
             }
-            if (string.IsNullOrEmpty(txtTelefono.Text))
+            if (string.IsNullOrEmpty(txtEspecialidad.Text))
             {
                 esValido = false;
-                erpTelefono.SetError(txtTelefono, "El campo Teléfono es obligatorio");
-            }
-            if (string.IsNullOrEmpty(txtEmail.Text))
-            {
-                esValido = false;
-                erpEmail.SetError(txtEmail, "El campo Email es obligatorio");
+                erpEspecialidad.SetError(txtEspecialidad, "El campo Código es obligatorio");
             }
             return esValido;
         }
@@ -129,29 +119,27 @@ namespace CpNatura
         {
             if (validar())
             {
-                var paciente = new Paciente();
-                paciente.nombre = txtNombre.Text.Trim();
-                paciente.apellido = txtApellido.Text.Trim();
-                paciente.ci =   txtCi.Text.Trim();
-                paciente.fechaNacimiento = dtpFechaNacimiento.Value;
-                paciente.telefono = txtTelefono.Text.Trim();
-                paciente.email = txtEmail.Text.Trim();
-                paciente.usuarioRegistro = "Edward";
+                var dermatologo = new Dermatologo();
+                dermatologo.nombre = txtNombre.Text.Trim();
+                dermatologo.apellido = txtApellido.Text.Trim(); 
+                dermatologo.matricula = txtMatricula.Text.Trim();
+                dermatologo.especialidad = txtEspecialidad.Text.Trim();
+                dermatologo.usuarioRegistro = "Edward";
                 if (esNuevo)
                 {
-                    paciente.fechaRegistro = DateTime.Now;
-                    paciente.estado = 1;
-                    PacienteCln.insertar(paciente);
+                    dermatologo.fechaRegistro = DateTime.Now;
+                    dermatologo.estado = 1;
+                    DermatologoCln.insertar(dermatologo);
                 }
                 else
                 {
                     int index = dgvLista.CurrentCell.RowIndex;
-                    paciente.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
-                    PacienteCln.actualizar(paciente);
+                    dermatologo.id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
+                    DermatologoCln.actualizar(dermatologo);
                 }
                 listar();
                 btnCancelar.PerformClick();
-                MessageBox.Show("Paciente registrado correctamente", "::: Natura - Mensaje:::",
+                MessageBox.Show("Médico registrado correctamente", "::: Natura - Mensaje:::",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -159,10 +147,8 @@ namespace CpNatura
         {
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
-            txtCi.Text = string.Empty;
-            dtpFechaNacimiento.Value = DateTime.Now;
-            txtTelefono.Text = string.Empty;
-            txtEmail.Text = string.Empty;
+            txtMatricula.Text = string.Empty;
+            txtEspecialidad.Text = string.Empty;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -171,13 +157,13 @@ namespace CpNatura
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
 
             string nombre = dgvLista.Rows[index].Cells["nombre"].Value.ToString();
-            DialogResult dialog = MessageBox.Show($"¿Está seguro que desea eliminar el Paciente {nombre}?",
+            DialogResult dialog = MessageBox.Show($"¿Está seguro que desea eliminar el Médico {nombre}?",
                 "::: Natura - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialog == DialogResult.OK)
             {
-                PacienteCln.eliminar(id, "Edward");
+                DermatologoCln.eliminar(id, "Edward");
                 listar();
-                MessageBox.Show("Paciente eliminado correctamente", "::: Natura - Mensaje:::",
+                MessageBox.Show("Médico eliminado correctamente", "::: Natura - Mensaje:::",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
