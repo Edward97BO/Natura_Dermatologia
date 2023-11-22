@@ -202,6 +202,7 @@
             this.btnPago.Text = "PAGOS";
             this.btnPago.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPago.UseVisualStyleBackColor = true;
+            this.btnPago.Click += new System.EventHandler(this.btnPago_Click);
             // 
             // panel3
             // 

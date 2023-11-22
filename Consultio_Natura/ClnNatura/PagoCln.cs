@@ -25,7 +25,7 @@ namespace ClnNatura
             {
                 var existente = context.Pago.Find(pago.id);
                 existente.importe = pago.importe;
-                existente.estado = pago.estado;
+                existente.saldo = pago.saldo;
                 existente.usuarioRegistro = pago.usuarioRegistro;
                 return context.SaveChanges();
             }
@@ -36,6 +36,7 @@ namespace ClnNatura
             using (var context = new NaturaEntities())
             {
                 var existente = context.Pago.Find(id);
+                existente.estado = -1;
                 existente.usuarioRegistro = usuarioRegistro;
                 return context.SaveChanges();
             }
@@ -53,7 +54,7 @@ namespace ClnNatura
         {
             using (var context = new NaturaEntities())
             {
-                return context.Pago.ToList();
+                return context.Pago.Where(x => x.estado != -1).ToList();
             }
         }
 

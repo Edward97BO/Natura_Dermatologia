@@ -24,3 +24,4 @@ D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura
 D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmPaciente.resources
 D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmCita.resources
 D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmMedico.resources
+D:\Universidad\Informática USFX\INGENIERÍA EN SOFTWARE\Natura\Consultio_Natura\CpNatura\obj\Debug\CpNatura.FrmPago.resources

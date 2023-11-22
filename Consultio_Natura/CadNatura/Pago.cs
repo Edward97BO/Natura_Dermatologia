@@ -17,9 +17,10 @@ namespace CadNatura
         public int id { get; set; }
         public int idCita { get; set; }
         public decimal importe { get; set; }
-        public string estado { get; set; }
+        public string saldo { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
+        public short estado { get; set; }
     
         public virtual Cita Cita { get; set; }
     }

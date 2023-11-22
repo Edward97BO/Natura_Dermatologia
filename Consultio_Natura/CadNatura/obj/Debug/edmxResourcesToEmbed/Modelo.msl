@@ -68,9 +68,10 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idCita" ColumnName="idCita" />
           <ScalarProperty Name="importe" ColumnName="importe" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
           <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
           <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -169,10 +170,11 @@
         <ComplexTypeMapping TypeName="NaturaModel.paPagoListar_Result">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idCita" ColumnName="idCita" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
           <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
           <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

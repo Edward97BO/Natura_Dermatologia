@@ -59,5 +59,10 @@ namespace CpNatura
         {
             abrirFrmHijo(new FrmMedico());
         }
+
+        private void btnPago_Click(object sender, EventArgs e)
+        {
+            abrirFrmHijo(new FrmPago());
+        }
     }
 }

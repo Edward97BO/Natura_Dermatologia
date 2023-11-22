@@ -64,9 +64,10 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idCita" Type="int" Nullable="false" />
     <Property Name="importe" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="estado" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="saldo" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="smallint" Nullable="false" />
   </EntityType>
   <EntityType Name="Reconsulta">
     <Key>

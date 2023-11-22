@@ -55,7 +55,7 @@ CREATE TABLE Pago (
   id INT NOT NULL PRIMARY KEY IDENTITY (1,1),
   idCita INT NOT NULL,
   importe DECIMAL(10,2) NOT NULL,
-  estado VARCHAR (25) NOT NULL,
+  saldo VARCHAR (25) NOT NULL,
   CONSTRAINT fk_Pago_Cita FOREIGN KEY(idCita) REFERENCES Cita(id)
 );
 
@@ -99,6 +99,7 @@ ALTER TABLE Dermatologo ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminaci
 
 ALTER TABLE Pago ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
 ALTER TABLE Pago ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
+ALTER TABLE Pago ADD estado SMALLINT NOT NULL DEFAULT 1; -- -1: Eliminación lógica, 0: Inactivo, 1: Activo
 
 ALTER TABLE Reconsulta ADD usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME();
 ALTER TABLE Reconsulta ADD fechaRegistro DATETIME NOT NULL DEFAULT GETDATE();
@@ -135,7 +136,7 @@ AS
 
 CREATE PROC paPagoListar @parametro VARCHAR(50)
 AS
-  SELECT id,idCita, estado, importe, usuarioRegistro,fechaRegistro
+  SELECT id,idCita, saldo, importe, usuarioRegistro,fechaRegistro,estado
   FROM Pago
   WHERE estado<>-1 AND idCita LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
@@ -180,7 +181,7 @@ VALUES
 ('Ana', 'Sánchez', '987654', 'Dermatología pediátrica'),
 ('Juan', 'García', '456789', 'Dermatología estética');
 
-INSERT INTO Pago (idCita, importe, estado)
+INSERT INTO Pago (idCita, importe, saldo)
 VALUES
 (1, 100.00, 'Pagado'),
 (2, 150.00, 'Pendiente'),
