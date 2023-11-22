@@ -1,6 +1,6 @@
 ﻿namespace CpNatura
 {
-    partial class FrmReconsulta
+    partial class FrmHistoriaClinica
     {
         /// <summary>
         /// Required designer variable.
@@ -31,16 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
-            this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.lblMotivo = new System.Windows.Forms.Label();
-            this.dtpHora = new System.Windows.Forms.DateTimePicker();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.cbxMotivo = new System.Windows.Forms.ComboBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblAntecedentes = new System.Windows.Forms.Label();
+            this.cbxPaciente = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblFechaReconsulta = new System.Windows.Forms.Label();
-            this.lblMotivoConsulta = new System.Windows.Forms.Label();
+            this.lblPaciente = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
@@ -52,15 +47,36 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.erpCita = new System.Windows.Forms.ErrorProvider(this.components);
-            this.erpMotivo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbxDermatologo = new System.Windows.Forms.ComboBox();
+            this.lblDermatologo = new System.Windows.Forms.Label();
+            this.txtAntecedentes = new System.Windows.Forms.TextBox();
+            this.txtSintomas = new System.Windows.Forms.TextBox();
+            this.lblSintomas = new System.Windows.Forms.Label();
+            this.txtDiagnostico = new System.Windows.Forms.TextBox();
+            this.lblDiagnosticos = new System.Windows.Forms.Label();
+            this.txtTratamientos = new System.Windows.Forms.TextBox();
+            this.lblTratamientos = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
+            this.erpPaciente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDermatologo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpAntecedentes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpSintomas = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDiagnosticos = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpTratamientos = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpObservaciones = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlDatos.SuspendLayout();
             this.gbxDatos.SuspendLayout();
             this.gbxLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pnlAcciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erpCita)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpMotivo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPaciente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDermatologo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpAntecedentes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpSintomas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDiagnosticos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTratamientos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpObservaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDatos
@@ -71,20 +87,26 @@
             this.pnlDatos.Location = new System.Drawing.Point(775, 0);
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(305, 615);
-            this.pnlDatos.TabIndex = 3;
+            this.pnlDatos.TabIndex = 4;
             // 
             // gbxDatos
             // 
-            this.gbxDatos.Controls.Add(this.txtMotivo);
-            this.gbxDatos.Controls.Add(this.lblMotivo);
-            this.gbxDatos.Controls.Add(this.dtpHora);
-            this.gbxDatos.Controls.Add(this.lblHora);
-            this.gbxDatos.Controls.Add(this.cbxMotivo);
-            this.gbxDatos.Controls.Add(this.dtpFecha);
+            this.gbxDatos.Controls.Add(this.txtObservaciones);
+            this.gbxDatos.Controls.Add(this.lblObservaciones);
+            this.gbxDatos.Controls.Add(this.txtTratamientos);
+            this.gbxDatos.Controls.Add(this.lblTratamientos);
+            this.gbxDatos.Controls.Add(this.txtDiagnostico);
+            this.gbxDatos.Controls.Add(this.lblDiagnosticos);
+            this.gbxDatos.Controls.Add(this.txtSintomas);
+            this.gbxDatos.Controls.Add(this.lblSintomas);
+            this.gbxDatos.Controls.Add(this.txtAntecedentes);
+            this.gbxDatos.Controls.Add(this.cbxDermatologo);
+            this.gbxDatos.Controls.Add(this.lblDermatologo);
+            this.gbxDatos.Controls.Add(this.lblAntecedentes);
+            this.gbxDatos.Controls.Add(this.cbxPaciente);
             this.gbxDatos.Controls.Add(this.btnCancelar);
             this.gbxDatos.Controls.Add(this.btnGuardar);
-            this.gbxDatos.Controls.Add(this.lblFechaReconsulta);
-            this.gbxDatos.Controls.Add(this.lblMotivoConsulta);
+            this.gbxDatos.Controls.Add(this.lblPaciente);
             this.gbxDatos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxDatos.ForeColor = System.Drawing.SystemColors.Control;
             this.gbxDatos.Location = new System.Drawing.Point(17, 13);
@@ -92,66 +114,24 @@
             this.gbxDatos.Size = new System.Drawing.Size(276, 590);
             this.gbxDatos.TabIndex = 0;
             this.gbxDatos.TabStop = false;
-            this.gbxDatos.Text = "Datos de la reconsulta:";
+            this.gbxDatos.Text = "Datos de Historia Clínica:";
             // 
-            // txtMotivo
+            // lblAntecedentes
             // 
-            this.txtMotivo.Location = new System.Drawing.Point(22, 279);
-            this.txtMotivo.Multiline = true;
-            this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(230, 157);
-            this.txtMotivo.TabIndex = 24;
+            this.lblAntecedentes.AutoSize = true;
+            this.lblAntecedentes.Location = new System.Drawing.Point(15, 148);
+            this.lblAntecedentes.Name = "lblAntecedentes";
+            this.lblAntecedentes.Size = new System.Drawing.Size(143, 22);
+            this.lblAntecedentes.TabIndex = 23;
+            this.lblAntecedentes.Text = "Antecedentes:";
             // 
-            // lblMotivo
+            // cbxPaciente
             // 
-            this.lblMotivo.AutoSize = true;
-            this.lblMotivo.Location = new System.Drawing.Point(18, 253);
-            this.lblMotivo.Name = "lblMotivo";
-            this.lblMotivo.Size = new System.Drawing.Size(211, 22);
-            this.lblMotivo.TabIndex = 23;
-            this.lblMotivo.Text = "Motivo de Reconsulta:";
-            // 
-            // dtpHora
-            // 
-            this.dtpHora.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.dtpHora.CustomFormat = "H : mm";
-            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHora.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpHora.Location = new System.Drawing.Point(22, 208);
-            this.dtpHora.Name = "dtpHora";
-            this.dtpHora.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpHora.ShowUpDown = true;
-            this.dtpHora.Size = new System.Drawing.Size(87, 29);
-            this.dtpHora.TabIndex = 20;
-            this.dtpHora.TabStop = false;
-            this.dtpHora.Value = new System.DateTime(2023, 11, 21, 21, 35, 0, 0);
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(18, 183);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(60, 22);
-            this.lblHora.TabIndex = 19;
-            this.lblHora.Text = "Hora:";
-            // 
-            // cbxMotivo
-            // 
-            this.cbxMotivo.FormattingEnabled = true;
-            this.cbxMotivo.Location = new System.Drawing.Point(22, 76);
-            this.cbxMotivo.Name = "cbxMotivo";
-            this.cbxMotivo.Size = new System.Drawing.Size(233, 30);
-            this.cbxMotivo.TabIndex = 18;
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(22, 148);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(143, 29);
-            this.dtpFecha.TabIndex = 13;
-            this.dtpFecha.TabStop = false;
+            this.cbxPaciente.FormattingEnabled = true;
+            this.cbxPaciente.Location = new System.Drawing.Point(19, 50);
+            this.cbxPaciente.Name = "cbxPaciente";
+            this.cbxPaciente.Size = new System.Drawing.Size(233, 30);
+            this.cbxPaciente.TabIndex = 18;
             // 
             // btnCancelar
             // 
@@ -181,33 +161,24 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // lblFechaReconsulta
+            // lblPaciente
             // 
-            this.lblFechaReconsulta.AutoSize = true;
-            this.lblFechaReconsulta.Location = new System.Drawing.Point(18, 119);
-            this.lblFechaReconsulta.Name = "lblFechaReconsulta";
-            this.lblFechaReconsulta.Size = new System.Drawing.Size(234, 22);
-            this.lblFechaReconsulta.TabIndex = 6;
-            this.lblFechaReconsulta.Text = "Fecha de de Reconsulta:";
-            // 
-            // lblMotivoConsulta
-            // 
-            this.lblMotivoConsulta.AutoSize = true;
-            this.lblMotivoConsulta.Location = new System.Drawing.Point(18, 52);
-            this.lblMotivoConsulta.Name = "lblMotivoConsulta";
-            this.lblMotivoConsulta.Size = new System.Drawing.Size(189, 22);
-            this.lblMotivoConsulta.TabIndex = 0;
-            this.lblMotivoConsulta.Text = "Motivo de Consulta:";
+            this.lblPaciente.AutoSize = true;
+            this.lblPaciente.Location = new System.Drawing.Point(18, 25);
+            this.lblPaciente.Name = "lblPaciente";
+            this.lblPaciente.Size = new System.Drawing.Size(96, 22);
+            this.lblPaciente.TabIndex = 0;
+            this.lblPaciente.Text = "Paciente:";
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Cooper Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.lblTitulo.Location = new System.Drawing.Point(3, 46);
+            this.lblTitulo.Location = new System.Drawing.Point(3, 65);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(766, 46);
-            this.lblTitulo.TabIndex = 4;
-            this.lblTitulo.Text = "RECONSULTAS";
+            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.Text = "HISTORIAS CLÍNICAS";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblBusqueda
@@ -215,19 +186,19 @@
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(237)))), ((int)(((byte)(229)))));
-            this.lblBusqueda.Location = new System.Drawing.Point(85, 134);
+            this.lblBusqueda.Location = new System.Drawing.Point(82, 161);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(335, 21);
-            this.lblBusqueda.TabIndex = 5;
-            this.lblBusqueda.Text = "Buscar por motivo de Reconsulta:";
+            this.lblBusqueda.Size = new System.Drawing.Size(316, 21);
+            this.lblBusqueda.TabIndex = 6;
+            this.lblBusqueda.Text = "Buscar por nombre de Paciente:";
             // 
             // txtParametro
             // 
             this.txtParametro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(237)))), ((int)(((byte)(229)))));
-            this.txtParametro.Location = new System.Drawing.Point(89, 173);
+            this.txtParametro.Location = new System.Drawing.Point(86, 196);
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(444, 20);
-            this.txtParametro.TabIndex = 6;
+            this.txtParametro.TabIndex = 7;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
             // btnBuscar
@@ -237,10 +208,10 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.Teal;
             this.btnBuscar.Image = global::CpNatura.Properties.Resources.Busca;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(560, 138);
+            this.btnBuscar.Location = new System.Drawing.Point(569, 161);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(118, 55);
-            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.TabIndex = 8;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -250,12 +221,12 @@
             // 
             this.gbxLista.Controls.Add(this.dgvLista);
             this.gbxLista.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxLista.Location = new System.Drawing.Point(89, 219);
+            this.gbxLista.Location = new System.Drawing.Point(86, 244);
             this.gbxLista.Name = "gbxLista";
             this.gbxLista.Size = new System.Drawing.Size(595, 188);
-            this.gbxLista.TabIndex = 8;
+            this.gbxLista.TabIndex = 9;
             this.gbxLista.TabStop = false;
-            this.gbxLista.Text = "Lista de Reconsultas:";
+            this.gbxLista.Text = "Lista de Historias Clinicas:";
             // 
             // dgvLista
             // 
@@ -277,10 +248,10 @@
             this.pnlAcciones.Controls.Add(this.btnEliminar);
             this.pnlAcciones.Controls.Add(this.btnEditar);
             this.pnlAcciones.Controls.Add(this.btnNuevo);
-            this.pnlAcciones.Location = new System.Drawing.Point(89, 431);
+            this.pnlAcciones.Location = new System.Drawing.Point(86, 458);
             this.pnlAcciones.Name = "pnlAcciones";
             this.pnlAcciones.Size = new System.Drawing.Size(595, 94);
-            this.pnlAcciones.TabIndex = 9;
+            this.pnlAcciones.TabIndex = 10;
             // 
             // btnCerrar
             // 
@@ -346,15 +317,123 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // erpCita
+            // cbxDermatologo
             // 
-            this.erpCita.ContainerControl = this;
+            this.cbxDermatologo.FormattingEnabled = true;
+            this.cbxDermatologo.Location = new System.Drawing.Point(16, 108);
+            this.cbxDermatologo.Name = "cbxDermatologo";
+            this.cbxDermatologo.Size = new System.Drawing.Size(233, 30);
+            this.cbxDermatologo.TabIndex = 25;
             // 
-            // erpMotivo
+            // lblDermatologo
             // 
-            this.erpMotivo.ContainerControl = this;
+            this.lblDermatologo.AutoSize = true;
+            this.lblDermatologo.Location = new System.Drawing.Point(15, 83);
+            this.lblDermatologo.Name = "lblDermatologo";
+            this.lblDermatologo.Size = new System.Drawing.Size(134, 22);
+            this.lblDermatologo.TabIndex = 24;
+            this.lblDermatologo.Text = "Dermatólogo:";
             // 
-            // FrmReconsulta
+            // txtAntecedentes
+            // 
+            this.txtAntecedentes.Location = new System.Drawing.Point(16, 174);
+            this.txtAntecedentes.Name = "txtAntecedentes";
+            this.txtAntecedentes.Size = new System.Drawing.Size(233, 29);
+            this.txtAntecedentes.TabIndex = 26;
+            // 
+            // txtSintomas
+            // 
+            this.txtSintomas.Location = new System.Drawing.Point(19, 232);
+            this.txtSintomas.Name = "txtSintomas";
+            this.txtSintomas.Size = new System.Drawing.Size(233, 29);
+            this.txtSintomas.TabIndex = 28;
+            // 
+            // lblSintomas
+            // 
+            this.lblSintomas.AutoSize = true;
+            this.lblSintomas.Location = new System.Drawing.Point(18, 206);
+            this.lblSintomas.Name = "lblSintomas";
+            this.lblSintomas.Size = new System.Drawing.Size(101, 22);
+            this.lblSintomas.TabIndex = 27;
+            this.lblSintomas.Text = "Síntomas:";
+            // 
+            // txtDiagnostico
+            // 
+            this.txtDiagnostico.Location = new System.Drawing.Point(19, 290);
+            this.txtDiagnostico.Name = "txtDiagnostico";
+            this.txtDiagnostico.Size = new System.Drawing.Size(233, 29);
+            this.txtDiagnostico.TabIndex = 30;
+            // 
+            // lblDiagnosticos
+            // 
+            this.lblDiagnosticos.AutoSize = true;
+            this.lblDiagnosticos.Location = new System.Drawing.Point(18, 264);
+            this.lblDiagnosticos.Name = "lblDiagnosticos";
+            this.lblDiagnosticos.Size = new System.Drawing.Size(134, 22);
+            this.lblDiagnosticos.TabIndex = 29;
+            this.lblDiagnosticos.Text = "Diagnósticos:";
+            // 
+            // txtTratamientos
+            // 
+            this.txtTratamientos.Location = new System.Drawing.Point(19, 348);
+            this.txtTratamientos.Name = "txtTratamientos";
+            this.txtTratamientos.Size = new System.Drawing.Size(233, 29);
+            this.txtTratamientos.TabIndex = 32;
+            // 
+            // lblTratamientos
+            // 
+            this.lblTratamientos.AutoSize = true;
+            this.lblTratamientos.Location = new System.Drawing.Point(18, 322);
+            this.lblTratamientos.Name = "lblTratamientos";
+            this.lblTratamientos.Size = new System.Drawing.Size(137, 22);
+            this.lblTratamientos.TabIndex = 31;
+            this.lblTratamientos.Text = "Tratamientos:";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(19, 411);
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(233, 29);
+            this.txtObservaciones.TabIndex = 34;
+            // 
+            // lblObservaciones
+            // 
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(18, 385);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(152, 22);
+            this.lblObservaciones.TabIndex = 33;
+            this.lblObservaciones.Text = "Observaciones:";
+            // 
+            // erpPaciente
+            // 
+            this.erpPaciente.ContainerControl = this;
+            // 
+            // erpDermatologo
+            // 
+            this.erpDermatologo.ContainerControl = this;
+            // 
+            // erpAntecedentes
+            // 
+            this.erpAntecedentes.ContainerControl = this;
+            // 
+            // erpSintomas
+            // 
+            this.erpSintomas.ContainerControl = this;
+            // 
+            // erpDiagnosticos
+            // 
+            this.erpDiagnosticos.ContainerControl = this;
+            // 
+            // erpTratamientos
+            // 
+            this.erpTratamientos.ContainerControl = this;
+            // 
+            // erpObservaciones
+            // 
+            this.erpObservaciones.ContainerControl = this;
+            // 
+            // FrmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -368,17 +447,22 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pnlDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmReconsulta";
-            this.Text = "FrmReconsulta";
-            this.Load += new System.EventHandler(this.FrmReconsulta_Load);
+            this.Name = "FrmHistoriaClinica";
+            this.Text = "FrmHistoriaClinica";
+            this.Load += new System.EventHandler(this.FrmHistoriaClinica_Load);
             this.pnlDatos.ResumeLayout(false);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
             this.gbxLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pnlAcciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.erpCita)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpMotivo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPaciente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDermatologo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpAntecedentes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpSintomas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDiagnosticos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpTratamientos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpObservaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,28 +472,39 @@
 
         private System.Windows.Forms.Panel pnlDatos;
         private System.Windows.Forms.GroupBox gbxDatos;
-        private System.Windows.Forms.DateTimePicker dtpHora;
-        private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.ComboBox cbxMotivo;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label lblAntecedentes;
+        private System.Windows.Forms.ComboBox cbxPaciente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label lblFechaReconsulta;
-        private System.Windows.Forms.Label lblMotivoConsulta;
+        private System.Windows.Forms.Label lblPaciente;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox gbxLista;
         private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.Label lblMotivo;
         private System.Windows.Forms.Panel pnlAcciones;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.TextBox txtMotivo;
-        private System.Windows.Forms.ErrorProvider erpCita;
-        private System.Windows.Forms.ErrorProvider erpMotivo;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.TextBox txtTratamientos;
+        private System.Windows.Forms.Label lblTratamientos;
+        private System.Windows.Forms.TextBox txtDiagnostico;
+        private System.Windows.Forms.Label lblDiagnosticos;
+        private System.Windows.Forms.TextBox txtSintomas;
+        private System.Windows.Forms.Label lblSintomas;
+        private System.Windows.Forms.TextBox txtAntecedentes;
+        private System.Windows.Forms.ComboBox cbxDermatologo;
+        private System.Windows.Forms.Label lblDermatologo;
+        private System.Windows.Forms.ErrorProvider erpPaciente;
+        private System.Windows.Forms.ErrorProvider erpDermatologo;
+        private System.Windows.Forms.ErrorProvider erpAntecedentes;
+        private System.Windows.Forms.ErrorProvider erpSintomas;
+        private System.Windows.Forms.ErrorProvider erpDiagnosticos;
+        private System.Windows.Forms.ErrorProvider erpTratamientos;
+        private System.Windows.Forms.ErrorProvider erpObservaciones;
     }
 }

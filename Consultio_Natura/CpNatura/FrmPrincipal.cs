@@ -69,5 +69,10 @@ namespace CpNatura
         {
             abrirFrmHijo(new FrmReconsulta());
         }
+
+        private void btnHistoriaClinica_Click(object sender, EventArgs e)
+        {
+            abrirFrmHijo(new FrmHistoriaClinica());
+        }
     }
 }

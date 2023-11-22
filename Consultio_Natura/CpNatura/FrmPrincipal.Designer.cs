@@ -152,6 +152,7 @@
             this.btnHistoriaClinica.Text = "H. CLÍNICA";
             this.btnHistoriaClinica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHistoriaClinica.UseVisualStyleBackColor = true;
+            this.btnHistoriaClinica.Click += new System.EventHandler(this.btnHistoriaClinica_Click);
             // 
             // panel6
             // 
