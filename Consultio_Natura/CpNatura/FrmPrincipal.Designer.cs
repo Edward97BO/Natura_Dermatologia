@@ -30,31 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblNatura = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.btnHistoriaClinica = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnReconsulta = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnPago = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnDermatologo = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnCita = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnPaciente = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlTitulo.SuspendLayout();
-            this.pnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -67,6 +67,30 @@
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1300, 35);
             this.pnlTitulo.TabIndex = 0;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Image = global::CpNatura.Properties.Resources.Minimizar;
+            this.btnMinimizar.Location = new System.Drawing.Point(1232, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 1;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Image = global::CpNatura.Properties.Resources.Salir;
+            this.btnCerrar.Location = new System.Drawing.Point(1263, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pnlMenu
             // 
@@ -112,63 +136,6 @@
             this.panel7.Size = new System.Drawing.Size(10, 32);
             this.panel7.TabIndex = 14;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel6.Location = new System.Drawing.Point(12, 483);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 32);
-            this.panel6.TabIndex = 12;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel5.Location = new System.Drawing.Point(12, 407);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 32);
-            this.panel5.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel3.Location = new System.Drawing.Point(12, 369);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 32);
-            this.panel3.TabIndex = 8;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel4.Location = new System.Drawing.Point(12, 331);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 32);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel2.Location = new System.Drawing.Point(12, 293);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 32);
-            this.panel2.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
-            this.panel1.Location = new System.Drawing.Point(12, 255);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 32);
-            this.panel1.TabIndex = 2;
-            // 
-            // pnlContenedor
-            // 
-            this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(156)))), ((int)(((byte)(137)))));
-            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedor.Location = new System.Drawing.Point(220, 35);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(1080, 615);
-            this.pnlContenedor.TabIndex = 2;
-            // 
             // btnHistoriaClinica
             // 
             this.btnHistoriaClinica.FlatAppearance.BorderSize = 0;
@@ -185,6 +152,14 @@
             this.btnHistoriaClinica.Text = "H. CLÍNICA";
             this.btnHistoriaClinica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel6.Location = new System.Drawing.Point(12, 483);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 32);
+            this.panel6.TabIndex = 12;
             // 
             // btnReconsulta
             // 
@@ -203,6 +178,14 @@
             this.btnReconsulta.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnReconsulta.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel5.Location = new System.Drawing.Point(12, 407);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 32);
+            this.panel5.TabIndex = 10;
+            // 
             // btnPago
             // 
             this.btnPago.FlatAppearance.BorderSize = 0;
@@ -219,6 +202,14 @@
             this.btnPago.Text = "PAGOS";
             this.btnPago.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPago.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel3.Location = new System.Drawing.Point(12, 369);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 32);
+            this.panel3.TabIndex = 8;
             // 
             // btnDermatologo
             // 
@@ -237,6 +228,14 @@
             this.btnDermatologo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDermatologo.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel4.Location = new System.Drawing.Point(12, 331);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 32);
+            this.panel4.TabIndex = 6;
+            // 
             // btnCita
             // 
             this.btnCita.FlatAppearance.BorderSize = 0;
@@ -253,6 +252,15 @@
             this.btnCita.Text = "CONSULTAS";
             this.btnCita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCita.UseVisualStyleBackColor = true;
+            this.btnCita.Click += new System.EventHandler(this.btnCita_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel2.Location = new System.Drawing.Point(12, 293);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 32);
+            this.panel2.TabIndex = 4;
             // 
             // btnPaciente
             // 
@@ -271,6 +279,14 @@
             this.btnPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPaciente.UseVisualStyleBackColor = true;
             this.btnPaciente.Click += new System.EventHandler(this.btnPaciente_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(230)))), ((int)(((byte)(211)))));
+            this.panel1.Location = new System.Drawing.Point(12, 255);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 32);
+            this.panel1.TabIndex = 2;
             // 
             // btnUsuario
             // 
@@ -300,29 +316,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnMinimizar
+            // pnlContenedor
             // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Image = global::CpNatura.Properties.Resources.Minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(1232, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 1;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = global::CpNatura.Properties.Resources.Salir;
-            this.btnCerrar.Location = new System.Drawing.Point(1263, 4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.pnlContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(156)))), ((int)(((byte)(137)))));
+            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedor.Location = new System.Drawing.Point(220, 35);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(1080, 615);
+            this.pnlContenedor.TabIndex = 2;
             // 
             // FrmPrincipal
             // 
@@ -338,10 +339,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
             this.pnlTitulo.ResumeLayout(false);
-            this.pnlMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
