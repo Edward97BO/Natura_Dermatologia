@@ -68,5 +68,14 @@ namespace ClnNatura
                 return context.paUsuarioListar(parametro).ToList();
             }
         }
+        public static Usuario validar(string usuario, string clave)
+        {
+            using (var context = new NaturaEntities())
+            {
+                return context.Usuario
+                    .Where(x => x.username == usuario && x.password == clave)
+                    .FirstOrDefault();
+            }
+        }
     }
 }

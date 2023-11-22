@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
+            this.txtTratamientos = new System.Windows.Forms.TextBox();
+            this.lblTratamientos = new System.Windows.Forms.Label();
+            this.txtDiagnostico = new System.Windows.Forms.TextBox();
+            this.lblDiagnosticos = new System.Windows.Forms.Label();
+            this.txtSintomas = new System.Windows.Forms.TextBox();
+            this.lblSintomas = new System.Windows.Forms.Label();
+            this.txtAntecedentes = new System.Windows.Forms.TextBox();
+            this.cbxDermatologo = new System.Windows.Forms.ComboBox();
+            this.lblDermatologo = new System.Windows.Forms.Label();
             this.lblAntecedentes = new System.Windows.Forms.Label();
             this.cbxPaciente = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -47,17 +58,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.cbxDermatologo = new System.Windows.Forms.ComboBox();
-            this.lblDermatologo = new System.Windows.Forms.Label();
-            this.txtAntecedentes = new System.Windows.Forms.TextBox();
-            this.txtSintomas = new System.Windows.Forms.TextBox();
-            this.lblSintomas = new System.Windows.Forms.Label();
-            this.txtDiagnostico = new System.Windows.Forms.TextBox();
-            this.lblDiagnosticos = new System.Windows.Forms.Label();
-            this.txtTratamientos = new System.Windows.Forms.TextBox();
-            this.lblTratamientos = new System.Windows.Forms.Label();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.lblObservaciones = new System.Windows.Forms.Label();
             this.erpPaciente = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpDermatologo = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpAntecedentes = new System.Windows.Forms.ErrorProvider(this.components);
@@ -65,6 +65,7 @@
             this.erpDiagnosticos = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpTratamientos = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpObservaciones = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblAutor = new System.Windows.Forms.Label();
             this.pnlDatos.SuspendLayout();
             this.gbxDatos.SuspendLayout();
             this.gbxLista.SuspendLayout();
@@ -115,6 +116,94 @@
             this.gbxDatos.TabIndex = 0;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos de Historia Clínica:";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(19, 411);
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(233, 29);
+            this.txtObservaciones.TabIndex = 34;
+            // 
+            // lblObservaciones
+            // 
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(18, 385);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(152, 22);
+            this.lblObservaciones.TabIndex = 33;
+            this.lblObservaciones.Text = "Observaciones:";
+            // 
+            // txtTratamientos
+            // 
+            this.txtTratamientos.Location = new System.Drawing.Point(19, 348);
+            this.txtTratamientos.Name = "txtTratamientos";
+            this.txtTratamientos.Size = new System.Drawing.Size(233, 29);
+            this.txtTratamientos.TabIndex = 32;
+            // 
+            // lblTratamientos
+            // 
+            this.lblTratamientos.AutoSize = true;
+            this.lblTratamientos.Location = new System.Drawing.Point(18, 322);
+            this.lblTratamientos.Name = "lblTratamientos";
+            this.lblTratamientos.Size = new System.Drawing.Size(137, 22);
+            this.lblTratamientos.TabIndex = 31;
+            this.lblTratamientos.Text = "Tratamientos:";
+            // 
+            // txtDiagnostico
+            // 
+            this.txtDiagnostico.Location = new System.Drawing.Point(19, 290);
+            this.txtDiagnostico.Name = "txtDiagnostico";
+            this.txtDiagnostico.Size = new System.Drawing.Size(233, 29);
+            this.txtDiagnostico.TabIndex = 30;
+            // 
+            // lblDiagnosticos
+            // 
+            this.lblDiagnosticos.AutoSize = true;
+            this.lblDiagnosticos.Location = new System.Drawing.Point(18, 264);
+            this.lblDiagnosticos.Name = "lblDiagnosticos";
+            this.lblDiagnosticos.Size = new System.Drawing.Size(134, 22);
+            this.lblDiagnosticos.TabIndex = 29;
+            this.lblDiagnosticos.Text = "Diagnósticos:";
+            // 
+            // txtSintomas
+            // 
+            this.txtSintomas.Location = new System.Drawing.Point(19, 232);
+            this.txtSintomas.Name = "txtSintomas";
+            this.txtSintomas.Size = new System.Drawing.Size(233, 29);
+            this.txtSintomas.TabIndex = 28;
+            // 
+            // lblSintomas
+            // 
+            this.lblSintomas.AutoSize = true;
+            this.lblSintomas.Location = new System.Drawing.Point(18, 206);
+            this.lblSintomas.Name = "lblSintomas";
+            this.lblSintomas.Size = new System.Drawing.Size(101, 22);
+            this.lblSintomas.TabIndex = 27;
+            this.lblSintomas.Text = "Síntomas:";
+            // 
+            // txtAntecedentes
+            // 
+            this.txtAntecedentes.Location = new System.Drawing.Point(16, 174);
+            this.txtAntecedentes.Name = "txtAntecedentes";
+            this.txtAntecedentes.Size = new System.Drawing.Size(233, 29);
+            this.txtAntecedentes.TabIndex = 26;
+            // 
+            // cbxDermatologo
+            // 
+            this.cbxDermatologo.FormattingEnabled = true;
+            this.cbxDermatologo.Location = new System.Drawing.Point(16, 108);
+            this.cbxDermatologo.Name = "cbxDermatologo";
+            this.cbxDermatologo.Size = new System.Drawing.Size(233, 30);
+            this.cbxDermatologo.TabIndex = 25;
+            // 
+            // lblDermatologo
+            // 
+            this.lblDermatologo.AutoSize = true;
+            this.lblDermatologo.Location = new System.Drawing.Point(15, 83);
+            this.lblDermatologo.Name = "lblDermatologo";
+            this.lblDermatologo.Size = new System.Drawing.Size(134, 22);
+            this.lblDermatologo.TabIndex = 24;
+            this.lblDermatologo.Text = "Dermatólogo:";
             // 
             // lblAntecedentes
             // 
@@ -317,94 +406,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // cbxDermatologo
-            // 
-            this.cbxDermatologo.FormattingEnabled = true;
-            this.cbxDermatologo.Location = new System.Drawing.Point(16, 108);
-            this.cbxDermatologo.Name = "cbxDermatologo";
-            this.cbxDermatologo.Size = new System.Drawing.Size(233, 30);
-            this.cbxDermatologo.TabIndex = 25;
-            // 
-            // lblDermatologo
-            // 
-            this.lblDermatologo.AutoSize = true;
-            this.lblDermatologo.Location = new System.Drawing.Point(15, 83);
-            this.lblDermatologo.Name = "lblDermatologo";
-            this.lblDermatologo.Size = new System.Drawing.Size(134, 22);
-            this.lblDermatologo.TabIndex = 24;
-            this.lblDermatologo.Text = "Dermatólogo:";
-            // 
-            // txtAntecedentes
-            // 
-            this.txtAntecedentes.Location = new System.Drawing.Point(16, 174);
-            this.txtAntecedentes.Name = "txtAntecedentes";
-            this.txtAntecedentes.Size = new System.Drawing.Size(233, 29);
-            this.txtAntecedentes.TabIndex = 26;
-            // 
-            // txtSintomas
-            // 
-            this.txtSintomas.Location = new System.Drawing.Point(19, 232);
-            this.txtSintomas.Name = "txtSintomas";
-            this.txtSintomas.Size = new System.Drawing.Size(233, 29);
-            this.txtSintomas.TabIndex = 28;
-            // 
-            // lblSintomas
-            // 
-            this.lblSintomas.AutoSize = true;
-            this.lblSintomas.Location = new System.Drawing.Point(18, 206);
-            this.lblSintomas.Name = "lblSintomas";
-            this.lblSintomas.Size = new System.Drawing.Size(101, 22);
-            this.lblSintomas.TabIndex = 27;
-            this.lblSintomas.Text = "Síntomas:";
-            // 
-            // txtDiagnostico
-            // 
-            this.txtDiagnostico.Location = new System.Drawing.Point(19, 290);
-            this.txtDiagnostico.Name = "txtDiagnostico";
-            this.txtDiagnostico.Size = new System.Drawing.Size(233, 29);
-            this.txtDiagnostico.TabIndex = 30;
-            // 
-            // lblDiagnosticos
-            // 
-            this.lblDiagnosticos.AutoSize = true;
-            this.lblDiagnosticos.Location = new System.Drawing.Point(18, 264);
-            this.lblDiagnosticos.Name = "lblDiagnosticos";
-            this.lblDiagnosticos.Size = new System.Drawing.Size(134, 22);
-            this.lblDiagnosticos.TabIndex = 29;
-            this.lblDiagnosticos.Text = "Diagnósticos:";
-            // 
-            // txtTratamientos
-            // 
-            this.txtTratamientos.Location = new System.Drawing.Point(19, 348);
-            this.txtTratamientos.Name = "txtTratamientos";
-            this.txtTratamientos.Size = new System.Drawing.Size(233, 29);
-            this.txtTratamientos.TabIndex = 32;
-            // 
-            // lblTratamientos
-            // 
-            this.lblTratamientos.AutoSize = true;
-            this.lblTratamientos.Location = new System.Drawing.Point(18, 322);
-            this.lblTratamientos.Name = "lblTratamientos";
-            this.lblTratamientos.Size = new System.Drawing.Size(137, 22);
-            this.lblTratamientos.TabIndex = 31;
-            this.lblTratamientos.Text = "Tratamientos:";
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(19, 411);
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(233, 29);
-            this.txtObservaciones.TabIndex = 34;
-            // 
-            // lblObservaciones
-            // 
-            this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(18, 385);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(152, 22);
-            this.lblObservaciones.TabIndex = 33;
-            this.lblObservaciones.Text = "Observaciones:";
-            // 
             // erpPaciente
             // 
             this.erpPaciente.ContainerControl = this;
@@ -433,12 +434,24 @@
             // 
             this.erpObservaciones.ContainerControl = this;
             // 
+            // lblAutor
+            // 
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(237)))), ((int)(((byte)(229)))));
+            this.lblAutor.Location = new System.Drawing.Point(289, 570);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(180, 22);
+            this.lblAutor.TabIndex = 11;
+            this.lblAutor.Text = "By Edward Barrera";
+            // 
             // FrmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(156)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.lblAutor);
             this.Controls.Add(this.pnlAcciones);
             this.Controls.Add(this.gbxLista);
             this.Controls.Add(this.btnBuscar);
@@ -506,5 +519,6 @@
         private System.Windows.Forms.ErrorProvider erpDiagnosticos;
         private System.Windows.Forms.ErrorProvider erpTratamientos;
         private System.Windows.Forms.ErrorProvider erpObservaciones;
+        private System.Windows.Forms.Label lblAutor;
     }
 }

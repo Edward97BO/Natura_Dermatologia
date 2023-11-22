@@ -117,7 +117,7 @@ namespace CpNatura
                 reconsulta.fecha = dtpFecha.Value;
                 reconsulta.hora = dtpHora.Value.TimeOfDay;
                 reconsulta.motivo = txtMotivo.Text.Trim();
-                reconsulta.usuarioRegistro = "Edward";
+                reconsulta.usuarioRegistro = Util.usuario.username;
                 if (esNuevo)
                 {
                     reconsulta.fechaRegistro = DateTime.Now;

@@ -54,6 +54,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.erpCita = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpMotivo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblAutor = new System.Windows.Forms.Label();
             this.pnlDatos.SuspendLayout();
             this.gbxDatos.SuspendLayout();
             this.gbxLista.SuspendLayout();
@@ -354,12 +355,24 @@
             // 
             this.erpMotivo.ContainerControl = this;
             // 
+            // lblAutor
+            // 
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(237)))), ((int)(((byte)(229)))));
+            this.lblAutor.Location = new System.Drawing.Point(290, 560);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(180, 22);
+            this.lblAutor.TabIndex = 14;
+            this.lblAutor.Text = "By Edward Barrera";
+            // 
             // FrmReconsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(156)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.lblAutor);
             this.Controls.Add(this.pnlAcciones);
             this.Controls.Add(this.gbxLista);
             this.Controls.Add(this.btnBuscar);
@@ -411,5 +424,6 @@
         private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.ErrorProvider erpCita;
         private System.Windows.Forms.ErrorProvider erpMotivo;
+        private System.Windows.Forms.Label lblAutor;
     }
 }

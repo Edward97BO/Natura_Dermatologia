@@ -165,7 +165,7 @@ namespace CpNatura
                 historiaClinica.diagnosticos = txtDiagnostico.Text.Trim();
                 historiaClinica.tratamientos = txtTratamientos.Text.Trim();
                 historiaClinica.observaciones = txtObservaciones.Text.Trim();
-                historiaClinica.usuarioRegistro = "Edward";
+                historiaClinica.usuarioRegistro = Util.usuario.username;
                 if (esNuevo)
                 {
                     historiaClinica.fechaRegistro = DateTime.Now;

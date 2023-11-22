@@ -74,5 +74,17 @@ namespace CpNatura
         {
             abrirFrmHijo(new FrmHistoriaClinica());
         }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Show();
+        }
+
+        private void horaFecha_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblFecha.Text = DateTime.Now.ToString("dddd, d / MMMM / yyyy").ToUpper();
+        }
     }
 }

@@ -124,7 +124,7 @@ namespace CpNatura
                 dermatologo.apellido = txtApellido.Text.Trim(); 
                 dermatologo.matricula = txtMatricula.Text.Trim();
                 dermatologo.especialidad = txtEspecialidad.Text.Trim();
-                dermatologo.usuarioRegistro = "Edward";
+                dermatologo.usuarioRegistro = Util.usuario.username;
                 if (esNuevo)
                 {
                     dermatologo.fechaRegistro = DateTime.Now;

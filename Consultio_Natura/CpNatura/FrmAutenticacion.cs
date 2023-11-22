@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClnNatura;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,10 +27,44 @@ namespace CpNatura
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        private bool validar()
+        {
+            bool esValido = true;
+            erpUsuario.SetError(txtUsuario, "");
+            erpClave.SetError(txtClave, "");
+            if (string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                erpUsuario.SetError(txtUsuario, "El campo Usuario es obligatorio");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(txtClave.Text))
+            {
+                erpClave.SetError(txtClave, "El campo Contraseña es obligatorio");
+                esValido = false;
+            }
+            return esValido;
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            new FrmPrincipal().ShowDialog();
+            if (validar())
+            {
+                var usuario = UsuarioCln.validar(txtUsuario.Text, Util.Encrypt(txtClave.Text));
+                if (usuario != null)
+                {
+                    Util.usuario = usuario;
+                    txtClave.Text = string.Empty;
+                    txtUsuario.Focus();
+                    txtUsuario.SelectAll();
+                    Visible = false;
+                    new FrmPrincipal().ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos",
+                        "::: IT Pro - Mensaje :::", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

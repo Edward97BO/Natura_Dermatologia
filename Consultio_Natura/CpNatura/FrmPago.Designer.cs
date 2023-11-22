@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.cbxCitaHora = new System.Windows.Forms.ComboBox();
+            this.cbxSaldo = new System.Windows.Forms.ComboBox();
+            this.nupImporte = new System.Windows.Forms.NumericUpDown();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.cbxCitaFecha = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -48,18 +51,16 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.nupImporte = new System.Windows.Forms.NumericUpDown();
-            this.cbxSaldo = new System.Windows.Forms.ComboBox();
             this.erpIdCita = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpImporte = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpSaldo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbxCitaHora = new System.Windows.Forms.ComboBox();
+            this.lblAutor = new System.Windows.Forms.Label();
             this.pnlDatos.SuspendLayout();
             this.gbxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupImporte)).BeginInit();
             this.gbxLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pnlAcciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupImporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpIdCita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpImporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpSaldo)).BeginInit();
@@ -94,6 +95,38 @@
             this.gbxDatos.TabIndex = 0;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos de los Pagos";
+            // 
+            // cbxCitaHora
+            // 
+            this.cbxCitaHora.FormattingEnabled = true;
+            this.cbxCitaHora.Location = new System.Drawing.Point(21, 94);
+            this.cbxCitaHora.Name = "cbxCitaHora";
+            this.cbxCitaHora.Size = new System.Drawing.Size(233, 30);
+            this.cbxCitaHora.TabIndex = 22;
+            // 
+            // cbxSaldo
+            // 
+            this.cbxSaldo.FormattingEnabled = true;
+            this.cbxSaldo.Items.AddRange(new object[] {
+            "Pagado",
+            "Pendiente"});
+            this.cbxSaldo.Location = new System.Drawing.Point(21, 238);
+            this.cbxSaldo.Name = "cbxSaldo";
+            this.cbxSaldo.Size = new System.Drawing.Size(233, 30);
+            this.cbxSaldo.TabIndex = 21;
+            // 
+            // nupImporte
+            // 
+            this.nupImporte.DecimalPlaces = 2;
+            this.nupImporte.Location = new System.Drawing.Point(21, 166);
+            this.nupImporte.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nupImporte.Name = "nupImporte";
+            this.nupImporte.Size = new System.Drawing.Size(120, 29);
+            this.nupImporte.TabIndex = 20;
             // 
             // lblSaldo
             // 
@@ -309,30 +342,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // nupImporte
-            // 
-            this.nupImporte.DecimalPlaces = 2;
-            this.nupImporte.Location = new System.Drawing.Point(21, 166);
-            this.nupImporte.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nupImporte.Name = "nupImporte";
-            this.nupImporte.Size = new System.Drawing.Size(120, 29);
-            this.nupImporte.TabIndex = 20;
-            // 
-            // cbxSaldo
-            // 
-            this.cbxSaldo.FormattingEnabled = true;
-            this.cbxSaldo.Items.AddRange(new object[] {
-            "Pagado",
-            "Pendiente"});
-            this.cbxSaldo.Location = new System.Drawing.Point(21, 238);
-            this.cbxSaldo.Name = "cbxSaldo";
-            this.cbxSaldo.Size = new System.Drawing.Size(233, 30);
-            this.cbxSaldo.TabIndex = 21;
-            // 
             // erpIdCita
             // 
             this.erpIdCita.ContainerControl = this;
@@ -345,13 +354,16 @@
             // 
             this.erpSaldo.ContainerControl = this;
             // 
-            // cbxCitaHora
+            // lblAutor
             // 
-            this.cbxCitaHora.FormattingEnabled = true;
-            this.cbxCitaHora.Location = new System.Drawing.Point(21, 94);
-            this.cbxCitaHora.Name = "cbxCitaHora";
-            this.cbxCitaHora.Size = new System.Drawing.Size(233, 30);
-            this.cbxCitaHora.TabIndex = 22;
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(237)))), ((int)(((byte)(229)))));
+            this.lblAutor.Location = new System.Drawing.Point(283, 568);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(180, 22);
+            this.lblAutor.TabIndex = 14;
+            this.lblAutor.Text = "By Edward Barrera";
             // 
             // FrmPago
             // 
@@ -359,6 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(156)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.lblAutor);
             this.Controls.Add(this.pnlAcciones);
             this.Controls.Add(this.gbxLista);
             this.Controls.Add(this.btnBuscar);
@@ -373,10 +386,10 @@
             this.pnlDatos.ResumeLayout(false);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupImporte)).EndInit();
             this.gbxLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pnlAcciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nupImporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpIdCita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpImporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpSaldo)).EndInit();
@@ -412,5 +425,6 @@
         private System.Windows.Forms.ErrorProvider erpImporte;
         private System.Windows.Forms.ErrorProvider erpSaldo;
         private System.Windows.Forms.ComboBox cbxCitaHora;
+        private System.Windows.Forms.Label lblAutor;
     }
 }

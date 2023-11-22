@@ -126,7 +126,7 @@ namespace CpNatura
                 var pago = new Pago();
                 pago.importe = nupImporte.Value;
                 pago.saldo = cbxSaldo.Text.Trim();
-                pago.usuarioRegistro = "Edward";
+                pago.usuarioRegistro = Util.usuario.username;
                 if (esNuevo)
                 {
                     pago.fechaRegistro = DateTime.Now;

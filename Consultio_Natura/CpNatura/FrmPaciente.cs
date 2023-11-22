@@ -136,7 +136,7 @@ namespace CpNatura
                 paciente.fechaNacimiento = dtpFechaNacimiento.Value;
                 paciente.telefono = txtTelefono.Text.Trim();
                 paciente.email = txtEmail.Text.Trim();
-                paciente.usuarioRegistro = "Edward";
+                paciente.usuarioRegistro = Util.usuario.username;
                 if (esNuevo)
                 {
                     paciente.fechaRegistro = DateTime.Now;

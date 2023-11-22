@@ -130,9 +130,9 @@ namespace CpNatura
                 usuario.nombre = txtNombre.Text.Trim();
                 usuario.apellido = txtApellido.Text.Trim();
                 usuario.username = txtUsuario.Text.Trim();
-                usuario.password = txtPassword.Text.Trim();
+                usuario.password = Util.Encrypt(txtPassword.Text.Trim());
                 usuario.rol = cbxRol.Text.Trim();
-                usuario.usuarioRegistro = "Edward";
+                usuario.usuarioRegistro = Util.usuario.username;
                 if (esNuevo)
                 {
                     usuario.fechaRegistro = DateTime.Now;
